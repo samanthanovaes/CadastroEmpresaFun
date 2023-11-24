@@ -50,6 +50,7 @@
             comboBox3 = new ComboBox();
             button3 = new Button();
             button4 = new Button();
+            textBox7 = new TextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -294,6 +295,18 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button2_Click;
             // 
+            // textBox7
+            // 
+            textBox7.BackColor = Color.Gold;
+            textBox7.BorderStyle = BorderStyle.None;
+            textBox7.Location = new Point(112, 58);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.ScrollBars = ScrollBars.Horizontal;
+            textBox7.Size = new Size(181, 25);
+            textBox7.TabIndex = 24;
+            textBox7.TextChanged += textBox7_TextChanged;
+            // 
             // CadastroEmp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -301,6 +314,7 @@
             BackgroundImage = Properties.Resources.Frame_1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox7);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(comboBox3);
@@ -354,5 +368,6 @@
         private ComboBox comboBox3;
         private Button button3;
         private Button button4;
+        private TextBox textBox7;
     }
 }
