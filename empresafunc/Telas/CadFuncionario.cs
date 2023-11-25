@@ -10,7 +10,9 @@ namespace empresafunc
         private List<Funcionario> listaFuncionario = new List<Funcionario>();
         public CadFuncionario()
         {
+
             InitializeComponent();
+
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -126,7 +128,17 @@ namespace empresafunc
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            maskedTextBox1.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+            textBox9.Clear();
+            textBox10.Clear();
+            textBox12.Clear();
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
@@ -140,6 +152,21 @@ namespace empresafunc
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }

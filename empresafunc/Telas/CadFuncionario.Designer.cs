@@ -87,6 +87,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(215, 30);
             textBox3.TabIndex = 5;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox6
             // 
@@ -97,6 +98,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(215, 30);
             textBox6.TabIndex = 6;
+            textBox6.TextChanged += textBox6_TextChanged;
             // 
             // textBox7
             // 
@@ -148,6 +150,7 @@
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(236, 30);
             textBox12.TabIndex = 12;
+            textBox12.TextChanged += textBox12_TextChanged;
             // 
             // button1
             // 
