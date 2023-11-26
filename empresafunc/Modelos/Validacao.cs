@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 public class Validacao
 {
@@ -68,5 +69,44 @@ public class Validacao
 
     }
 
+    public static bool Cnpjval (string cnpj)
+    {
 
+        cnpj = new string(cnpj.Where(char.IsDigit).ToArray());
+
+        if (cnpj.Length != 14)
+        {
+            return false;
+        }
+
+        int[] pesos1 = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+        int soma1 = pesos1.Select((t, i) => int.Parse(cnpj[i].ToString()) * t).Sum();
+        int digito1 = soma1 % 11 < 2 ? 0 : 11 - soma1 % 11;
+
+        int[] pesos2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+        int soma2 = pesos2.Select((t, i) => int.Parse(cnpj[i].ToString()) * t).Sum();
+        int digito2 = soma2 % 11 < 2 ? 0 : 11 - soma2 % 11;
+
+        return int.Parse(cnpj[12].ToString()) == digito1 && int.Parse(cnpj[13].ToString()) == digito2;
+    }
+
+        /*
+    private bool TextBoxVazio()
+    {
+        foreach (Control c in this.Controls)
+        {
+           
+            if (c is TextBox || c is MaskedTextBox)
+            {
+                var text = c.Text.Replace(",", "").Replace("-", "").Trim();
+
+                if (text == "")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }*/
 }

@@ -8,13 +8,13 @@ public class Empresa
     private string _Regime;
     private DateTime _Datainicio;
     private string _Telefone;
-    private string _Capitalsocial;
+    private double _Capitalsocial;
     private string _Unifederal;
     private string _Cidade;
     private string _Rua;
     private string _Bairro;
     private string _Tipo;
-    private char _Porte;
+    private string _Porte;
     private string _Natureza;
     private string _Proprietario;
     private string _Cpf;
@@ -55,7 +55,7 @@ public class Empresa
         get { return _Telefone; }
         set { _Telefone = value; }
     }
-    public string Capitalsocial
+    public double Capitalsocial
     {
         get { return _Capitalsocial; }
         set { _Capitalsocial = value; }
@@ -90,7 +90,7 @@ public class Empresa
         set { _Tipo = value; }
     }
 
-    public char Porte
+    public string Porte
     {
         get { return _Porte; }
         set { _Porte = value; }
@@ -121,7 +121,7 @@ public class Empresa
     }
 
     public Empresa (string cnpj, string razaosocial, string situacao, string regime, DateTime datainicio, string telefone, 
-        string capitalsocial, string unifederal, string cidade, string rua, string bairro, string tipo, char porte, string natureza, string proprietario, string cpf)
+        double capitalsocial, string unifederal, string cidade, string rua, string bairro, string tipo, string porte, string natureza, string proprietario, string cpf)
     {
         
         this.Cpf = cnpj;

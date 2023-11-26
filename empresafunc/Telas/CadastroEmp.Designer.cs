@@ -74,6 +74,7 @@
             textBox3.ScrollBars = ScrollBars.Horizontal;
             textBox3.Size = new Size(181, 25);
             textBox3.TabIndex = 2;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -204,6 +205,7 @@
             textBox6.ScrollBars = ScrollBars.Horizontal;
             textBox6.Size = new Size(202, 20);
             textBox6.TabIndex = 15;
+            textBox6.TextChanged += textBox6_TextChanged_1;
             // 
             // radioButton4
             // 

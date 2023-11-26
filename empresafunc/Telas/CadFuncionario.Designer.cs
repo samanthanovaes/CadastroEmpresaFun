@@ -189,6 +189,7 @@
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(216, 20);
             maskedTextBox1.TabIndex = 16;
+            maskedTextBox1.MaskInputRejected += maskedTextBox1_MaskInputRejected;
             // 
             // comboBox1
             // 

@@ -1,4 +1,5 @@
 ﻿using empresafunc.Configuracao;
+using Org.BouncyCastle.Bcpg.Sig;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace empresafunc.Telas
     public partial class CadastroEmp : Form
     {
 
-        private List<Empresa> empresaList = new List<Empresa>();  
+        private List<Empresa> empresaList = new List<Empresa>();
         public CadastroEmp()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace empresafunc.Telas
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Empresa cadastrado com sucesso.");
+                    MessageBox.Show("Empresa cadastrada com sucesso.");
                 }
             }
             catch (Exception ex)
@@ -80,7 +81,7 @@ namespace empresafunc.Telas
 
                 while (leitor.Read())
                 {
-                    resultado += "\n" + leitor.GetString("cnpj_emp");
+                    resultado += "\n" + leitor.GetString("razao_social_emp");
                 }
 
                 MessageBox.Show(resultado);
@@ -95,7 +96,7 @@ namespace empresafunc.Telas
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -136,9 +137,94 @@ namespace empresafunc.Telas
         private void button1_Click(object sender, EventArgs e)
         {
 
+            string regime = null;
+            string porte = null;
+            string tipo = null;
+
+            if (radioButton2.Checked)
+            {
+                regime = radioButton2.Text;
+            }
+            if (radioButton1.Checked)
+            {
+                regime = radioButton1.Text;
+            }
+            if (radioButton3.Checked)
+            {
+                regime = radioButton3.Text;
+            }
+
+            //
+             
+             if (radioButton4.Checked)
+            {
+                tipo = radioButton4.Text;
+            }
+            if (radioButton5.Checked)
+            {
+                tipo = radioButton5.Text;
+            }
+
+            //
+
+            if (radioButton6.Checked)
+            {
+                porte = radioButton6.Text;
+            }
+            if (radioButton7.Checked)
+            {
+                porte = radioButton6.Text;
+            }
+            if (radioButton8.Checked)
+            {
+                porte = radioButton8.Text;
+            }
+            
+            //
+
+            DateTime data = DateTime.Parse(dateTimePicker1.Text);
+            double capitals = Convert.ToDouble(textBox3.Text);
+            Empresa s = new Empresa(textBox7.Text, textBox1.Text, comboBox1.Text, regime, data, maskedTextBox2.Text, capitals, comboBox2.Text, textBox4.Text,
+            textBox2.Text, textBox6.Text, tipo, porte, comboBox3.Text, textBox5.Text, maskedTextBox1.Text);
+
+            if (Validacao.Cnpjval(textBox7.Text))
+            {
+
+                if (Validacao.CPF(maskedTextBox1.Text))
+                {
+
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                    Inserir(s);
+                    Consulta();
+                }
+
+                else
+                {
+
+                    MessageBox.Show("CPF do proprietário inválido. Tente novamente.");
+
+                }
+
+            }
+            else
+            {
+
+                MessageBox.Show("CNPJ inválido. Tente novamente.");
+
+            }
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged_1(object sender, EventArgs e)
         {
 
         }

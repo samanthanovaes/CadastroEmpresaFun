@@ -1,3 +1,5 @@
+using empresafunc.Telas;
+
 namespace empresafunc
 {
     internal static class Program
