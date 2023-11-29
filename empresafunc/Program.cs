@@ -13,7 +13,9 @@ namespace empresafunc
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CadFuncionario());
+            Application.Run(new CadastroEmp());
+
+
         }
     }
 }

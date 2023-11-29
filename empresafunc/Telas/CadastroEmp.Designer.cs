@@ -51,6 +51,12 @@
             button3 = new Button();
             button4 = new Button();
             textBox7 = new TextBox();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -135,7 +141,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.BackColor = Color.Gold;
-            radioButton1.Location = new Point(145, 179);
+            radioButton1.Location = new Point(6, 10);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(66, 24);
             radioButton1.TabIndex = 9;
@@ -147,19 +153,20 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.BackColor = Color.Gold;
-            radioButton2.Location = new Point(217, 179);
+            radioButton2.Location = new Point(89, 10);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(59, 24);
             radioButton2.TabIndex = 10;
             radioButton2.TabStop = true;
             radioButton2.Text = "Real";
             radioButton2.UseVisualStyleBackColor = false;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // radioButton3
             // 
             radioButton3.AutoSize = true;
             radioButton3.BackColor = Color.Gold;
-            radioButton3.Location = new Point(287, 179);
+            radioButton3.Location = new Point(174, 10);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(82, 24);
             radioButton3.TabIndex = 11;
@@ -211,7 +218,7 @@
             // 
             radioButton4.AutoSize = true;
             radioButton4.BackColor = Color.Gold;
-            radioButton4.Location = new Point(452, 56);
+            radioButton4.Location = new Point(15, 12);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(72, 24);
             radioButton4.TabIndex = 16;
@@ -224,7 +231,7 @@
             // 
             radioButton5.AutoSize = true;
             radioButton5.BackColor = Color.Gold;
-            radioButton5.Location = new Point(555, 56);
+            radioButton5.Location = new Point(168, 12);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new Size(61, 24);
             radioButton5.TabIndex = 17;
@@ -237,7 +244,7 @@
             // 
             radioButton6.AutoSize = true;
             radioButton6.BackColor = Color.Gold;
-            radioButton6.Location = new Point(485, 97);
+            radioButton6.Location = new Point(6, 12);
             radioButton6.Name = "radioButton6";
             radioButton6.Size = new Size(38, 24);
             radioButton6.TabIndex = 18;
@@ -249,7 +256,7 @@
             // 
             radioButton7.AutoSize = true;
             radioButton7.BackColor = Color.Gold;
-            radioButton7.Location = new Point(555, 97);
+            radioButton7.Location = new Point(101, 12);
             radioButton7.Name = "radioButton7";
             radioButton7.Size = new Size(43, 24);
             radioButton7.TabIndex = 19;
@@ -261,7 +268,7 @@
             // 
             radioButton8.AutoSize = true;
             radioButton8.BackColor = Color.Gold;
-            radioButton8.Location = new Point(625, 97);
+            radioButton8.Location = new Point(198, 12);
             radioButton8.Name = "radioButton8";
             radioButton8.Size = new Size(40, 24);
             radioButton8.TabIndex = 20;
@@ -309,6 +316,41 @@
             textBox7.TabIndex = 24;
             textBox7.TextChanged += textBox7_TextChanged;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = SystemColors.Window;
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Location = new Point(145, 171);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(262, 42);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = SystemColors.Window;
+            groupBox2.Controls.Add(radioButton4);
+            groupBox2.Controls.Add(radioButton5);
+            groupBox2.Location = new Point(439, 41);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(262, 42);
+            groupBox2.TabIndex = 26;
+            groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            groupBox3.BackColor = SystemColors.Window;
+            groupBox3.Controls.Add(radioButton6);
+            groupBox3.Controls.Add(radioButton7);
+            groupBox3.Controls.Add(radioButton8);
+            groupBox3.Location = new Point(477, 83);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(262, 42);
+            groupBox3.TabIndex = 27;
+            groupBox3.TabStop = false;
+            // 
             // CadastroEmp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -316,22 +358,17 @@
             BackgroundImage = Properties.Resources.Frame_1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(textBox7);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(comboBox3);
-            Controls.Add(radioButton8);
-            Controls.Add(radioButton7);
-            Controls.Add(radioButton6);
-            Controls.Add(radioButton5);
-            Controls.Add(radioButton4);
             Controls.Add(textBox6);
             Controls.Add(textBox2);
             Controls.Add(comboBox2);
             Controls.Add(dateTimePicker1);
-            Controls.Add(radioButton3);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
             Controls.Add(comboBox1);
             Controls.Add(maskedTextBox2);
             Controls.Add(maskedTextBox1);
@@ -342,6 +379,12 @@
             DoubleBuffered = true;
             Name = "CadastroEmp";
             Text = "CadastroEmp";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -371,5 +414,8 @@
         private Button button3;
         private Button button4;
         private TextBox textBox7;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
     }
 }

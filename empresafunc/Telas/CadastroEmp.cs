@@ -15,7 +15,7 @@ namespace empresafunc.Telas
     public partial class CadastroEmp : Form
     {
 
-        private List<Empresa> empresaList = new List<Empresa>();
+
         public CadastroEmp()
         {
             InitializeComponent();
@@ -31,31 +31,38 @@ namespace empresafunc.Telas
             button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button4.BackColor = Color.Transparent;
+
+
         }
 
         private void Inserir(Empresa s)
         {
             try
             {
-                Conexao conexao = new Conexao();
-                var comando = conexao.Comando("insert into Empresa values (null, @cnpj, @razao_social, @situacao_cadastral, " +
-                "@regime_tributario, @data_inicio, @telefone, @capital_social, @uf, @cidade, @rua, @bairro, @tipo, @porte, @natureza, @nome_proprietario, @cpf_proprietario)");
 
-                comando.Parameters.AddWithValue("@cnpj", s.Cnpj);
+                Conexao conexao = new Conexao();
+                var comando = conexao.Comando("insert into Empresa values (null, " +
+                    "@cnpj, @razao_social, @nome_fantasia, @situacao_cadastral, " +
+                    "@regime_tributario, @data_inicio, @telefone, @capital_social, " +
+                    "@uf, @cidade, @rua, @bairro, @tipo, @porte, @natureza, @nome_proprietario, @cpf_proprietario)");
+
+                comando.Parameters.AddWithValue("@cnpj", "234");
                 comando.Parameters.AddWithValue("@razao_social", s.RazaoSocial);
+                comando.Parameters.AddWithValue("@nome_fantasia", "Nome Fantasia teste");
                 comando.Parameters.AddWithValue("@situacao_cadastral", s.Situacao);
                 comando.Parameters.AddWithValue("@regime_tributario", s.Regime);
-                comando.Parameters.AddWithValue("@data_inicio", s.Datainicio);
+                comando.Parameters.AddWithValue("@data_inicio", "2023-10-02");
                 comando.Parameters.AddWithValue("@telefone", s.Telefone);
                 comando.Parameters.AddWithValue("@capital_social", s.Capitalsocial);
                 comando.Parameters.AddWithValue("@uf", s.Unifederal);
                 comando.Parameters.AddWithValue("@cidade", s.Cidade);
-                comando.Parameters.AddWithValue("@rua", s.Rua);
+                comando.Parameters.AddWithValue("@rua", "sda");
+                comando.Parameters.AddWithValue("@bairro", s.Bairro);
                 comando.Parameters.AddWithValue("@tipo", s.Tipo);
                 comando.Parameters.AddWithValue("@porte", s.Porte);
                 comando.Parameters.AddWithValue("@natureza", s.Natureza);
                 comando.Parameters.AddWithValue("@nome_proprietario", s.Proprietario);
-                comando.Parameters.AddWithValue("@cpf_pro", s.Porte);
+                comando.Parameters.AddWithValue("@cpf_proprietario", s.Cpf);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -70,33 +77,10 @@ namespace empresafunc.Telas
             }
 
         }
-        void Consulta()
-        {
-            try
-            {
-                var conexao = new Conexao();
-                var comando = conexao.Comando("select * from Empresa");
-                var leitor = comando.ExecuteReader();
-                string resultado = null;
 
-                while (leitor.Read())
-                {
-                    resultado += "\n" + leitor.GetString("razao_social_emp");
-                }
-
-                MessageBox.Show(resultado);
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -136,10 +120,10 @@ namespace empresafunc.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string regime = null;
-            string porte = null;
-            string tipo = null;
+            S
+            string regime = "";
+            string porte = "";
+            string tipo = "";
 
             if (radioButton2.Checked)
             {
@@ -151,12 +135,12 @@ namespace empresafunc.Telas
             }
             if (radioButton3.Checked)
             {
-                regime = radioButton3.Text;
+                regime = radioButton3.Text;S
             }
 
             //
-             
-             if (radioButton4.Checked)
+
+            if (radioButton4.Checked)
             {
                 tipo = radioButton4.Text;
             }
@@ -179,7 +163,7 @@ namespace empresafunc.Telas
             {
                 porte = radioButton8.Text;
             }
-            
+
             //
 
             DateTime data = DateTime.Parse(dateTimePicker1.Text);
@@ -193,9 +177,8 @@ namespace empresafunc.Telas
                 if (Validacao.CPF(maskedTextBox1.Text))
                 {
 
-                    MessageBox.Show("Cadastro realizado com sucesso!");
                     Inserir(s);
-                    Consulta();
+                    //Consulta();
                 }
 
                 else
@@ -225,6 +208,11 @@ namespace empresafunc.Telas
         }
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }

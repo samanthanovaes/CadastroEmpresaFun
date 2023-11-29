@@ -124,6 +124,11 @@ namespace empresafunc
                 MessageBox.Show("Erro. CPF falso.");
 
             }
+            /*
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = dataGridView1;
+            */
         }
 
         private void button2_Click(object sender, EventArgs e)

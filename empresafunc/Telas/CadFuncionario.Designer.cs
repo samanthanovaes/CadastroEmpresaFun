@@ -109,6 +109,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(215, 30);
             textBox7.TabIndex = 7;
+            textBox7.Text = "Rua";
             // 
             // textBox8
             // 
@@ -119,6 +120,7 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(165, 30);
             textBox8.TabIndex = 8;
+            textBox8.Text = "Bairro";
             // 
             // textBox9
             // 
@@ -129,6 +131,7 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(165, 30);
             textBox9.TabIndex = 9;
+            textBox9.Text = "Número";
             textBox9.TextChanged += textBox9_TextChanged;
             // 
             // textBox10
