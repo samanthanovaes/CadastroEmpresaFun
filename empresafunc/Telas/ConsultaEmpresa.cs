@@ -13,15 +13,15 @@ namespace empresafunc
 {
     public partial class ConsultaEmpresa : Form
     {
-        private List<Empresa> empresaList = new List<Empresa>();
+        public List<Empresa> empresaList = new List<Empresa>();
 
-        public ConsultaEmpresa()
+        public ConsultaEmpresa(Empresa s)
         {
             InitializeComponent();
-            Consulta();
+            Consulta(s);
         }
 
-        void Consulta()
+        void Consulta(Empresa s)
         {
             try
             {
@@ -36,6 +36,7 @@ namespace empresafunc
                 }
 
                 dataGridView1.DataSource = empresaList;
+                empresaList.Add(s);
 
             }
 
@@ -43,6 +44,11 @@ namespace empresafunc
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

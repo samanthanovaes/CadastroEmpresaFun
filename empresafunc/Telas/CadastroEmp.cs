@@ -170,7 +170,7 @@ namespace empresafunc.Telas
             double capitals = Convert.ToDouble(textBox3.Text);
             Empresa s = new Empresa(textBox7.Text, textBox1.Text, comboBox1.Text, regime, data, maskedTextBox2.Text, capitals, comboBox2.Text, textBox4.Text,
             textBox2.Text, textBox6.Text, tipo, porte, comboBox3.Text, textBox5.Text, maskedTextBox1.Text);
-
+            
             if (Validacao.Cnpjval(textBox7.Text))
             {
 
@@ -178,7 +178,7 @@ namespace empresafunc.Telas
                 {
 
                     Inserir(s);
-                    //Consulta();
+                    ConsultaEmpresa.Consulta(s);
                 }
 
                 else
