@@ -42,7 +42,7 @@ namespace empresafunc.Telas
 
                 Conexao conexao = new Conexao();
                 var comando = conexao.Comando("insert into Empresa values (null, " +
-                    "@cnpj, @razao_social, @nome_fantasia, @situacao_cadastral, " +
+                    "@cnpj, @razao_social, @situacao_cadastral, " +
                     "@regime_tributario, @data_inicio, @telefone, @capital_social, " +
                     "@uf, @cidade, @rua, @bairro, @tipo, @porte, @natureza, @nome_proprietario, @cpf_proprietario)");
 
@@ -120,7 +120,7 @@ namespace empresafunc.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            S
+            
             string regime = "";
             string porte = "";
             string tipo = "";
@@ -135,7 +135,7 @@ namespace empresafunc.Telas
             }
             if (radioButton3.Checked)
             {
-                regime = radioButton3.Text;S
+                regime = radioButton3.Text;
             }
 
             //
