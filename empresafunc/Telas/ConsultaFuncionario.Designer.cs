@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -43,6 +45,24 @@
             dataGridView1.Size = new Size(580, 328);
             dataGridView1.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.Location = new Point(246, 379);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 35);
+            button1.TabIndex = 2;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(424, 379);
+            button2.Name = "button2";
+            button2.Size = new Size(123, 35);
+            button2.TabIndex = 3;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // ConsultaFuncionario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -50,6 +70,8 @@
             BackgroundImage = Properties.Resources.Frame_1__2_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             DoubleBuffered = true;
             Name = "ConsultaFuncionario";
@@ -61,5 +83,7 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button button1;
+        private Button button2;
     }
 }

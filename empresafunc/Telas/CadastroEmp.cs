@@ -177,7 +177,7 @@ namespace empresafunc.Telas
                 {
 
                     Inserir(s);
-                    ConsultaEmpresa.Consulta();
+                  //  ConsultaEmpresa.Consulta();
                 }
 
                 else

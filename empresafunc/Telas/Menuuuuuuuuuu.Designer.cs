@@ -1,6 +1,6 @@
 ﻿namespace empresafunc
 {
-    partial class Menu
+    partial class Menuuuuuuuuuu
     {
         /// <summary>
         /// Required designer variable.

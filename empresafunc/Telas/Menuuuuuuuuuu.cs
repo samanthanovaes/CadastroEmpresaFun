@@ -1,4 +1,5 @@
-﻿using System;
+﻿using empresafunc.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace empresafunc
 {
-    public partial class Menu : Form
+    public partial class Menuuuuuuuuuu : Form
     {
-        public Menu()
+        public Menuuuuuuuuuu()
         {
             InitializeComponent();
 
@@ -32,17 +33,16 @@ namespace empresafunc
         private void button1_Click(object sender, EventArgs e)
         {
 
+            ConsultaFuncionario Consultaf = new ConsultaFuncionario();
+            Consultaf.Show();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ConsultaEmpresa Consultae = new ConsultaEmpresa();
+            Consultae.Show();
+            
         }
     }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-
-    }
-}
 }

@@ -90,7 +90,9 @@ public class Validacao
         return int.Parse(cnpj[12].ToString()) == digito1 && int.Parse(cnpj[13].ToString()) == digito2;
     }
 
-        /*
+    /* não usei o metódo porque desconheço a biblioteca usada ;)
+
+     /*
     private bool TextBoxVazio()
     {
         foreach (Control c in this.Controls)
