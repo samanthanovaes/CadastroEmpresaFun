@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace empresafunc.Telas
         public ConsultaFuncionario()
         {
             InitializeComponent();
+            Consulta();
 
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.FlatAppearance.BorderSize = 0;
@@ -30,6 +32,31 @@ namespace empresafunc.Telas
 
         }
 
+        void Consulta()
+        {
+
+
+            using (var conexao = new MySqlConnection("server=localhost;uid=root;pwd=root;database=empresa_x2a_bd"))
+            {
+                try
+                {
+                    conexao.Open();
+                    string query = "select * from Funcionario";
+                    using (var da = new MySqlDataAdapter(query, conexao))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                }
+            }
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CadFuncionario cadFuncionario = new CadFuncionario();
@@ -40,6 +67,11 @@ namespace empresafunc.Telas
         {
             Menuuuuuuuuuu menuuuuuuuuuu = new Menuuuuuuuuuu();
             menuuuuuuuuuu.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -114,6 +114,16 @@ namespace empresafunc.Telas
 
         private void button2_Click(object sender, EventArgs e)
         {
+            textBox7.Clear();
+            textBox1.Clear();
+            maskedTextBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox2.Clear();
+            textBox6.Clear();
+            textBox5.Clear();
+            maskedTextBox1.Clear();
+
 
         }
 
