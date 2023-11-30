@@ -31,7 +31,6 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox5 = new TextBox();
-            textBox3 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
@@ -43,6 +42,7 @@
             dateTimePicker1 = new DateTimePicker();
             maskedTextBox1 = new MaskedTextBox();
             comboBox1 = new ComboBox();
+            maskedTextBox2 = new MaskedTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -77,17 +77,6 @@
             textBox5.Size = new Size(215, 30);
             textBox5.TabIndex = 4;
             textBox5.TextChanged += textBox5_TextChanged;
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.Gold;
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(220, 337);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(215, 30);
-            textBox3.TabIndex = 5;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox6
             // 
@@ -205,6 +194,16 @@
             comboBox1.Size = new Size(231, 28);
             comboBox1.TabIndex = 17;
             // 
+            // maskedTextBox2
+            // 
+            maskedTextBox2.BackColor = Color.Gold;
+            maskedTextBox2.BorderStyle = BorderStyle.None;
+            maskedTextBox2.Location = new Point(220, 347);
+            maskedTextBox2.Mask = "(00) 00000-0000";
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.Size = new Size(215, 20);
+            maskedTextBox2.TabIndex = 18;
+            // 
             // CadFuncionario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -212,6 +211,7 @@
             BackgroundImage = Properties.Resources.Untitled;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(943, 573);
+            Controls.Add(maskedTextBox2);
             Controls.Add(comboBox1);
             Controls.Add(maskedTextBox1);
             Controls.Add(dateTimePicker1);
@@ -223,7 +223,6 @@
             Controls.Add(textBox8);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
-            Controls.Add(textBox3);
             Controls.Add(textBox5);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -239,7 +238,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox5;
-        private TextBox textBox3;
         private TextBox textBox6;
         private TextBox textBox7;
         private TextBox textBox8;
@@ -251,5 +249,6 @@
         private DateTimePicker dateTimePicker1;
         private MaskedTextBox maskedTextBox1;
         private ComboBox comboBox1;
+        private MaskedTextBox maskedTextBox2;
     }
 }

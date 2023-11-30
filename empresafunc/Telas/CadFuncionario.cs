@@ -103,7 +103,7 @@ namespace empresafunc
         {
             DateTime dateTime = DateTime.Parse(dateTimePicker1.Text);
             double salario = Convert.ToDouble(textBox12.Text);
-            Funcionario s = new Funcionario(textBox1.Text, textBox2.Text, maskedTextBox1.Text, textBox5.Text, textBox3.Text, textBox6.Text, textBox7.Text, textBox8.Text,
+            Funcionario s = new Funcionario(textBox1.Text, textBox2.Text, maskedTextBox1.Text, textBox5.Text, maskedTextBox2.Text, textBox6.Text, textBox7.Text, textBox8.Text,
             textBox9.Text, dateTime, textBox10.Text, comboBox1.Text, salario);
             if (Validacao.CPF(maskedTextBox1.Text))
             {
@@ -135,7 +135,7 @@ namespace empresafunc
         {
             textBox1.Clear();
             textBox2.Clear();
-            textBox3.Clear();
+            maskedTextBox2.Clear();
             maskedTextBox1.Clear();
             textBox5.Clear();
             textBox6.Clear();
