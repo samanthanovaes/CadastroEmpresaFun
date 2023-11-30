@@ -28,7 +28,7 @@ public class Empresa
     public string RazaoSocial
     {
         get { return _Razaosocial; }
-        set { _Razaosocial = value; }
+            set { _Razaosocial = value; }
 
 
     }

@@ -143,6 +143,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(236, 30);
             textBox10.TabIndex = 10;
+            textBox10.TextChanged += textBox10_TextChanged;
             // 
             // textBox12
             // 

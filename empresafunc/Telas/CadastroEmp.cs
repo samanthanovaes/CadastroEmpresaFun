@@ -48,7 +48,6 @@ namespace empresafunc.Telas
 
                 comando.Parameters.AddWithValue("@cnpj", "234");
                 comando.Parameters.AddWithValue("@razao_social", s.RazaoSocial);
-                comando.Parameters.AddWithValue("@nome_fantasia", "Nome Fantasia teste");
                 comando.Parameters.AddWithValue("@situacao_cadastral", s.Situacao);
                 comando.Parameters.AddWithValue("@regime_tributario", s.Regime);
                 comando.Parameters.AddWithValue("@data_inicio", "2023-10-02");
@@ -178,7 +177,7 @@ namespace empresafunc.Telas
                 {
 
                     Inserir(s);
-                    ConsultaEmpresa.Consulta(s);
+                    ConsultaEmpresa.Consulta();
                 }
 
                 else
